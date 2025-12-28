@@ -1,14 +1,39 @@
-
-body{margin:0;font-family:Arial;background:#020617;color:#fff}
-.center{max-width:380px;margin:80px auto}
-.card{background:#1e293b;padding:20px;border-radius:18px}
-button{padding:10px;margin:5px;border:none;border-radius:10px;
-background:#2563eb;color:white}
-input{width:100%;padding:8px;margin:5px;border-radius:8px;border:none}
-.hidden{display:none}
-#dash{display:flex;min-height:100vh}
-.sidebar{width:220px;background:#020617;padding:15px}
-.content{flex:1;padding:20px}
-.lang-switch{position:fixed;top:10px;left:10px}
-table{width:100%;border-collapse:collapse}
-th,td{border-bottom:1px solid #334155;padding:6px}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.lang-switch {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.lang-switch button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  width: 280px;
+  text-align: center;
+}
+.card input, .card button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+.card button {
+  background: #1e90ff;
+  color: white;
+}
