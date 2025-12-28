@@ -1,0 +1,41 @@
+name: Deploy Maswory PWA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇️ Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔍 Basic security scan (no secrets)
+        run: |
+          if grep -R "MASWORY_SECURE_KEY" .; then
+            echo "⚠️ Warning: hardcoded key found"
+          else
+            echo "✅ No obvious secrets"
+          fi
+
+      - name: 📦 Prepare build folder
+        run: |
+          mkdir dist
+          cp -r index.html style.css app.secure.js manifest.json sw.js icons dist/
+
+      - name: 🚀 Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: 🌍 Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
