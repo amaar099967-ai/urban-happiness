@@ -1,9 +1,0 @@
-{
-  "name": "PWA Projects",
-  "short_name": "PWA",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#0f2027",
-  "theme_color": "#1e90ff",
-  "icons": []
-}
