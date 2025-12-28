@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نظام المسوري برو</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1e88e5">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="login-section" class="screen">
+  <h2>تسجيل الدخول الآمن</h2>
+  <button id="login-btn">دخول بالبصمة</button>
+</section>
+
+<section id="main-app" class="hidden">
+  <h3>المحاسبة</h3>
+  <table>
+    <thead>
+      <tr><th>#</th><th>الوصف</th><th>السعر</th><th>الكمية</th><th>الإجمالي</th></tr>
+    </thead>
+    <tbody id="data-rows"></tbody>
+  </table>
+
+  <button onclick="addRow()">إضافة صف</button>
+  <div class="summary">
+    الإجمالي: <span id="grand-total">0</span>
+  </div>
+</section>
+
+<script src="app.secure.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
+if ('Notification' in window && Notification.permission === 'default') {
+  Notification.requestPermission();
+}
+</script>
+</body>
+</html>

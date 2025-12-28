@@ -1,0 +1,5 @@
+body{font-family:Cairo,Arial;background:#f4f6f8;margin:0;padding:20px}
+.hidden{display:none}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ccc;padding:8px;text-align:center}
+button{padding:10px 15px;background:#1e88e5;color:#fff;border:none;border-radius:6px}
